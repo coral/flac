@@ -19,8 +19,8 @@
 // for a brief introduction of their respective formats.
 //
 //    [1]: https://www.xiph.org/flac/format.html#stream
-//    [2]: https://godoc.org/github.com/mewkiz/flac/meta
-//    [3]: https://godoc.org/github.com/mewkiz/flac/frame
+//    [2]: https://godoc.org/github.com/coral/flac/meta
+//    [3]: https://godoc.org/github.com/coral/flac/frame
 //
 // Note: the Encoder API is experimental until the 1.1.x release. As such, it's
 // API is expected to change.
@@ -33,8 +33,8 @@ import (
 	"io"
 	"os"
 
-	"github.com/mewkiz/flac/frame"
-	"github.com/mewkiz/flac/meta"
+	"github.com/coral/flac/frame"
+	"github.com/coral/flac/meta"
 )
 
 // A Stream contains the metadata blocks and provides access to the audio frames
@@ -80,6 +80,19 @@ func New(r io.Reader) (stream *Stream, err error) {
 		}
 		isLast = block.IsLast
 	}
+
+	return stream, nil
+}
+
+// Manual creates a new Stream for accessing the audio samples of r. It expects
+// that you supply the info object in order for it to create the stream.
+
+// Call Stream.Next to parse the frame header of the next audio frame, and call
+// Stream.ParseNext to parse the entire next frame including audio samples.
+func Manual(r io.Reader, m *meta.StreamInfo) (stream *Stream, err error) {
+	// Verify FLAC signature and parse the StreamInfo metadata block.
+	br := bufio.NewReader(r)
+	stream = &Stream{r: br, Info: m}
 
 	return stream, nil
 }

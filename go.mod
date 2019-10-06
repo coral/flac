@@ -1,4 +1,4 @@
-module github.com/mewkiz/flac
+module github.com/coral/flac
 
 require (
 	github.com/go-audio/audio v0.0.0-20181013203223-7b2a6ca21480

@@ -5,8 +5,8 @@ import (
 	"hash"
 	"io"
 
+	"github.com/coral/flac/meta"
 	"github.com/icza/bitio"
-	"github.com/mewkiz/flac/meta"
 	"github.com/mewkiz/pkg/errutil"
 )
 

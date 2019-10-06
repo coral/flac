@@ -22,7 +22,7 @@
 //    [2]: https://www.xiph.org/flac/format.html#blocking
 //    [3]: https://www.xiph.org/flac/format.html#interchannel
 //    [4]: https://www.xiph.org/flac/format.html#prediction
-//    [5]: https://godoc.org/github.com/mewkiz/flac/frame#Pred
+//    [5]: https://godoc.org/github.com/coral/flac/frame#Pred
 package frame
 
 import (
@@ -33,11 +33,11 @@ import (
 	"io"
 	"log"
 
-	"github.com/mewkiz/flac/internal/bits"
-	"github.com/mewkiz/flac/internal/hashutil"
-	"github.com/mewkiz/flac/internal/hashutil/crc16"
-	"github.com/mewkiz/flac/internal/hashutil/crc8"
-	"github.com/mewkiz/flac/internal/utf8"
+	"github.com/coral/flac/internal/bits"
+	"github.com/coral/flac/internal/hashutil"
+	"github.com/coral/flac/internal/hashutil/crc16"
+	"github.com/coral/flac/internal/hashutil/crc8"
+	"github.com/coral/flac/internal/utf8"
 )
 
 // A Frame contains the header and subframes of an audio frame. It holds the

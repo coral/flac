@@ -8,9 +8,9 @@ import (
 	"log"
 	"os"
 
+	"github.com/coral/flac"
 	"github.com/go-audio/audio"
 	"github.com/go-audio/wav"
-	"github.com/mewkiz/flac"
 	"github.com/mewkiz/pkg/osutil"
 	"github.com/mewkiz/pkg/pathutil"
 	"github.com/pkg/errors"

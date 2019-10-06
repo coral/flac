@@ -1,9 +1,9 @@
-package flac
+wpackage flac
 
 import (
+	"github.com/coral/flac/frame"
+	iobits "github.com/coral/flac/internal/bits"
 	"github.com/icza/bitio"
-	"github.com/mewkiz/flac/frame"
-	iobits "github.com/mewkiz/flac/internal/bits"
 	"github.com/mewkiz/pkg/errutil"
 )
 

@@ -3,7 +3,7 @@ package utf8
 import (
 	"io"
 
-	"github.com/mewkiz/flac/internal/ioutilx"
+	"github.com/coral/flac/internal/ioutilx"
 	"github.com/mewkiz/pkg/errutil"
 )
 
